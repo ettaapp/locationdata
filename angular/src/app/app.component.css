@@ -1,0 +1,21 @@
+.label-font{
+    color: #116a65;
+    font-weight: 700;
+}
+.card-body{
+    display: table;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+  height: 400px;
+  padding-top:30px;
+  
+}
+.main-container{
+    margin:10px;
+    padding:10px;
+}
+.card{
+    background: rgb(247, 247, 239);
+    padding-bottom:30px
+}

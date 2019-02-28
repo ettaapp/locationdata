@@ -1,0 +1,58 @@
+<div class="container">
+  <div  class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 style="text-align:center">
+    Welcome to Quiz Application &#x263A;
+    </h3>
+  </div>
+    <div class="card" [hidden]="isQuestionCardShow">
+        <div class="card-body">
+          <h5 class="card-title" style="text-align:center">Click Start &#x263A; </h5>
+            <div class="col-sm-12 col-lg-3">
+              <button class="btn btn-block btn-outline-primary cursor-restriction" style="margin-top: 24px;" (click)="startQuiz()">
+                Start</button>
+            </div>
+          </div>
+        </div>
+<div >
+<div class="card" [hidden]="!isQuestionCardShow">
+        <div class="card-body">
+                
+        What is the correct form of  <br>{{array.word}}
+
+<br>
+
+  <ul class="list-group">
+<a  *ngIf="array.suggestios[0]" class="list-group-item" (click)="clicked(int,0)"> 
+{{array.suggestios[0]}}
+</a>
+<a *ngIf="array.suggestios[1]" class="list-group-item" (click)="clicked(int,1)"> 
+{{array.suggestios[1]}}
+</a>
+<a *ngIf="array.suggestios[2]" class="list-group-item" (click)="clicked(int,2)">
+{{array.suggestios[2]}}
+</a>
+<a *ngIf="array.suggestios[3]" class="list-group-item" (click)="clicked(int,3)">
+ {{array.suggestios[3]}}
+</a>
+<a *ngIf="array.suggestios[4]" class="list-group-item" (click)="clicked(int,4)"> 
+{{array.suggestios[4]}}
+</a>
+<a *ngIf="array.suggestios[5]" class="list-group-item" (click)="clicked(int,5)">
+ {{array.suggestios[5]}}
+</a>
+</ul>
+<input #box class="form-control" placeholder="Or insert here" (keyup.enter)="onEnter(box.value)" [(ngModel)]="searchValue">
+</div>
+<hr>
+<div class="row">
+        <div  style="justify-content: center;display: flex;">
+                <button class="btn btn-primary" (click)="prev()"><span class="glyphicon glyphicon-menu-left"></span></button> &nbsp;
+                <button class="btn btn-primary" (click)="next()"><span class="glyphicon glyphicon-menu-right"></span></button>
+        </div>
+      </div>
+</div> 
+
+</div>
+</div>
+</div>
