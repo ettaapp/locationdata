@@ -14,11 +14,9 @@ const cors = require('cors');
 const HOSTNAME = 'http://localhost:3000' + config.urls.timestamp
 app.use(cors());
 
-app.listen(process.env.PORT || 3000)
-
 const connectionUtil = require('./utils/dbConnection.util');
 const locationNameRoute = require('./routes/location_name.route');
-app.use(config.urls.location_name,locationNameRoute);
+
 // allow CORS
 connectionUtil.connect();
 app.use(function (req, resp, next) {
@@ -43,10 +41,7 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 app.set('secret', config.secret);
-app.get(config.urls.timestamp, (req, res, next) => {
-	res.status(200).json({
-		status: 200,
-		success: true,
-		data: Date.now()
-	})
-});
+
+app.use(config.urls.location_name,locationNameRoute);
+
+app.listen(process.env.PORT || 3000)

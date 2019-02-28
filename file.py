@@ -14,3 +14,6 @@ with open(file) as train_file:
 @app.route('/location_names')
 def location_get():
     return jsonify(data)
+
+if __name__ == '__main__':
+    app.run(debug=True)
